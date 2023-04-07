@@ -1,0 +1,138 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    left: -250px;
+    background-color: #075b82;
+    transition: all .5s ease;
+}
+
+.sidebar>header {
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    line-height: 5rem;
+    background: #172a33;
+    user-select: none;
+}
+
+.sidebar>ul a {
+    color: white;
+    width: 100%;
+    height: 100%;
+    line-height: 4rem;
+    /* margin-left: 20%; */
+    padding-left: 40px;
+    font-size: 1.2rem;
+    display: block;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid black;
+    transition: .4s;
+
+}
+
+.sidebar>ul li:hover a {
+    padding-left: 50px;
+}
+
+.sidebar ul a i {
+    margin-right: 16px;
+}
+
+
+#check {
+    display: none;
+}
+
+label #btn,
+label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background: #060eeb;
+    border-radius: 3px;
+}
+
+label #btn {
+    left: 90%;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    transition: all .5s;
+    animation: animate 3s linear infinite;
+}
+
+
+@keyframes animate {
+    0% {
+        transform: scale(1.1);
+    }
+
+    25% {
+        transform: scale(1.2);
+
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1.4);
+    }
+}
+
+label #cancel {
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+
+label #cancel:hover {
+    transform: rotate(360deg);
+}
+
+#check:checked~.sidebar {
+    left: 0;
+}
+
+
+
+#check:checked~label#btn {
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked~label #cancel {
+    left: 195px;
+}
+
+
+#check:checked~section {
+    margin-left: 250px;
+}
+
+section {
+    background-image: url('/images/pngtree-dark-blue-plain-background-for-design-template-image_916068.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* background: #fff; */
+    transition: all .5s;
+
+}
